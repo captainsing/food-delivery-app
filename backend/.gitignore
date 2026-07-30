@@ -1,0 +1,10 @@
+# Secret Keys and Database Passwords
+.env
+.env.local
+
+# Heavy Dependency Folders
+node_modules/
+
+# Log Files
+*.log
+.DS_Store
