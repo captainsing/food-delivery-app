@@ -15,7 +15,7 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
     const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
     
     try {
-      const res = await axios.post(`https://dashboard.render.com/web/srv-d9m0okgae00c73b7aiv0${endpoint}`, formData);
+      const res = await axios.post(`https://food-delivery-backend-h4w7.onrender.com${endpoint}`, formData);
       onAuthSuccess(res.data.user, res.data.token);
       onClose();
     } catch (err) {
