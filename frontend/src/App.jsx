@@ -28,7 +28,7 @@ export default function App() {
       try { setUser(JSON.parse(savedUser)); } catch (e) { localStorage.removeItem('user'); }
     }
 
-    axios.get('http://localhost:5000/api/foods')
+    axios.get('https://dashboard.render.com/web/srv-d9m0okgae00c73b7aiv0/api/foods')
       .then((res) => setFoods(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -55,7 +55,7 @@ export default function App() {
   const handleCheckout = async () => {
     const totalAmount = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
     try {
-      await axios.post('http://localhost:5000/api/orders', {
+      await axios.post('https://dashboard.render.com/web/srv-d9m0okgae00c73b7aiv0/api/orders', {
         userId: user ? user.id : null,
         items: cart,
         totalAmount
